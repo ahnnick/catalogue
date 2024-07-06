@@ -12,7 +12,7 @@
         <h1 class="mt-5">Welcome to My Flask App!</h1>
         <p class="lead">This is the default landing page using Bootstrap for styling.</p>
 
- 	<form action="{{ url_for('save_input') }}" method="POST">
+ 	<form action="{{ url_for('main.save_input') }}" method="POST">
             <div class="form-group">
                 <label for="userInput">Enter something:</label>
                 <input type="text" class="form-control" id="userInput" name="user_input">
@@ -20,7 +20,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
-	<a href="{{ url_for('second_page') }}">Go to Second Page</a>
+	<a href="{{ url_for('main.second_page') }}">Go to Second Page</a>
     </div>
     <!-- jQuery, Popper.js, and Bootstrap JS via CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
