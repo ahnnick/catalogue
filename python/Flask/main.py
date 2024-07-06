@@ -24,6 +24,8 @@ def create_database(app):
     else:
         print("Database already exists.")
 
+app = create_app()
+
 if __name__ == '__main__':
 	app = create_app()
 	create_database(app)
