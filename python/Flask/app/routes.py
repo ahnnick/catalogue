@@ -35,7 +35,7 @@ def add_book():
         print(f"Received ISBN: {isbn}")  # Debug print statement
         api_key = current_app.config['GOOGLE_BOOKS_API_KEY']
         url = f'https://www.googleapis.com/books/v1/volumes?q=isbn:{isbn}&key={api_key}'
-        print(f"URL: {url}")  # Debug print statement
+        #  print(f"URL: {url}")  # Debug print statement
         response = requests.get(url)
         print(f"Response status code: {response.status_code}")  # Debug print statement
 
@@ -54,7 +54,7 @@ def add_book():
                 location = 'shelf'
 
                 # Save book info to the database
-                new_book = UserInput(
+                new_book = Book(
                     title=title,
                     authors=authors,
                     publisher=publisher,
