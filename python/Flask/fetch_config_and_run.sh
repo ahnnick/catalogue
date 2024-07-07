@@ -3,14 +3,14 @@ source ../../../secrets/catalogue/config.env
 
 # Export the variables so that they are available to subprocesses
 export GOOGLE_BOOKS_API_KEY
-export NEW_SECRET_VARIABLE
+export SECRET_KEY
 export SQLALCHEMY_DATABASE_URI
 export SQLALCHEMY_TRACK_MODIFICATIONS
 
 
 # Debugging: Print environment variables to verify they are set
 # echo "GOOGLE_BOOKS_API_KEY: $GOOGLE_BOOKS_API_KEY"
-# echo "NEW_SECRET_VARIABLE: $NEW_SECRET_VARIABLE"
+echo "SECRET_KEY: $SECRET_KEY"
 # echo "SQLALCHEMY_DATABASE_URI: $SQLALCHEMY_DATABASE_URI"
 # echo "SQLALCHEMY_TRACK_MODIFICATIONS: $SQLALCHEMY_TRACK_MODIFICATIONS"
 

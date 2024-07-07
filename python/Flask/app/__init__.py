@@ -14,14 +14,13 @@ def create_app():
 	catalogue = Flask(__name__)
 	
 	catalogue.config.from_object('config.Config')
-	
 
-	catalogue.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(data_dir, 'site.db')
-	catalogue.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+#	catalogue.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(data_dir, 'site.db')
+#	catalogue.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 	# Debug prints to verify environment variables
-	# print(f"GOOGLE_BOOKS_API_KEY: {catalogue.config['GOOGLE_BOOKS_API_KEY']}")
-	print(f"SQLALCHEMY_DATABASE_URI: {catalogue.config['SQLALCHEMY_DATABASE_URI']}")
+	print(f"SECRET_KEY: {catalogue.config['SECRET_KEY']}")
+	# print(f"SQLALCHEMY_DATABASE_URI: {catalogue.config['SQLALCHEMY_DATABASE_URI']}")
 	
 	db.init_app(catalogue)
 	migrate.init_app(catalogue, db)	
