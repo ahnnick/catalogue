@@ -13,8 +13,7 @@ if not os.path.exists(data_dir):
 def create_app(): 
 	catalogue = Flask(__name__)
 	
-	catalogue.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(data_dir, 'site.db')
-	catalogue.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+        catalogue.config.from_object('config.Config')
 
 	db.init_app(catalogue)
 	migrate.init_app(catalogue, db)	
