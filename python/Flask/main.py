@@ -7,9 +7,9 @@ if not os.path.exists(data_dir):
     os.makedirs(data_dir)
 
 # Print current working directory and database path for debugging
-print(f"Current working directory: {os.getcwd()}")
-print(f"Data directory: {data_dir}")
-print(f"Database path: {os.path.join(data_dir, 'site.db')}")
+# print(f"Current working directory: {os.getcwd()}")
+# print(f"Data directory: {data_dir}")
+# print(f"Database path: {os.path.join(data_dir, 'site.db')}")
 
 def create_database(app):
     print("Checking for existing database...")
