@@ -3,12 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Flask App</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Catalogue</title>
+    <!-- Use this line for prod -->
+   <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
+    <!-- Use this line for dev -->
+     <link rel="stylesheet" href="../static/css/bootstrap.css">
 </head>
-<body>
-    <h1>Books List</h1>
+<body data-bs-theme="light">
+
+<!--navbar-->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">View All Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.add_book') }}">Add New Book</a>
+              </li>
+              <!--
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+              -->
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search All Books" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+<!--navbar endeth here-->
+
+    <h1>Book List</h1>
+
+  <!--sample  
     <ul>
         {% for book in records %}
         <li>
@@ -23,11 +74,41 @@
         </li>
         {% endfor %}
     </ul>
-        <a href="{{ url_for('main.index') }}" class="btn btn-primary mt-3">Back to Home</a>
-    </div>
+ -->
+
+
+    <div class="row g-5 p-3">
+    {% for book in records %}
+        <div class="col-sm-6 mb-3 mb-sm-0 w-25">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ book.title }}</h5>
+              <p class="card-text">{{ book.authors }}</p>
+              <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}    
+      </div>
+
+
+<!-- Footer -->
+    <footer>
+        <div class="text-end p-3 rounded" style="background-color: rgba(133, 133, 133, 0.2)">
+            Greetings from Ohio!
+          </div>
+    </footer>
+<!-- Footer -->
+
+
     <!-- jQuery, Popper.js, and Bootstrap JS via CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+   <!--use this line for prod-->
+    <!-- <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script> -->
+   <!--use this line for dev-->
+   <script src="../static/js/bootstrap.js"></script>
+
+
 </body>
 </html>

@@ -20,7 +20,7 @@ def create_app():
 
 	# Debug prints to verify environment variables
 	print(f"SECRET_KEY: {catalogue.config['SECRET_KEY']}")
-	# print(f"SQLALCHEMY_DATABASE_URI: {catalogue.config['SQLALCHEMY_DATABASE_URI']}")
+	print(f"SQLALCHEMY_DATABASE_URI: {catalogue.config['SQLALCHEMY_DATABASE_URI']}")
 	
 	db.init_app(catalogue)
 	migrate.init_app(catalogue, db)	
